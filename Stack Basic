@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+//Implement With Array
+class Stack
+{
+    int *arr;
+    int size;
+    int top;
+public:
+    Stack(int s)
+    {
+        size = s;
+        top = -1;
+        arr = new int[s];
+    }
+    // Push
+    void push(int value)
+    {
+        if(top==size-1){cout<<"Stack Overflow\n"; return; }
+        else
+        {
+            top++;
+            arr[top]=value;
+            cout<<"Pushed "<<value<< " into Stack\n";
+        }
+    }
+    // Pop
+    void pop()
+    {
+        if(top == -1){ cout<<"Stack Underflow\n"; return ; }
+        else
+        {
+            cout<<"Poped "<<arr[top]<<" from the stack\n";
+            top--;
+        }
+    }
+    // Peek
+    int peek()
+    {
+        if(top == -1){ cout<<"Stack is empty: "; return -1; }
+        else
+        {
+            cout<<"Stack Peek Value:";
+            return arr[top];
+        }
+    }
+    // IsEmpty
+    bool IsEmpty()
+    {
+        return top==-1;
+    }
+    // IsSize
+    int IsSize()
+    {
+        return top+1;
+    }
+};
+int main()
+{
+    Stack S(5);
+
+   S.push(3);
+   cout<<S.peek()<<endl;
+
+}
